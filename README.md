@@ -1,5 +1,5 @@
 # crypto_currency_scraper
-Scrape All Time Historical Data of any currency from coinmarketcap.com 
+Scrape All Time Historical Data of any currency from coinmarketcap.com with this python script<br>
 
 This is a script to scrape 'all-time' data of desired crypto currency, and saves <br>
 the file as a csv to the directory script is being executed from.<br>
