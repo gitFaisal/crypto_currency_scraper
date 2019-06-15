@@ -12,6 +12,7 @@ Super easy to use, simpley run script and enter currency name. Example below <br
 
 Example of how to use: <br>
 >>> *run terminal*<br>
+
 #I change my directory to desktop here because the script file is on my desktop
 
 >>> cd desktop<br>
