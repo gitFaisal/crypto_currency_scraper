@@ -1,10 +1,11 @@
 # crypto_currency_scraper
-Scrape All Time Historical Data of any currency from coinmarketcap.com with this python script<br>
+Scrape Historical Data of any currency from coinmarketcap.com with this python script<br>
 
-This is a script to scrape 'all-time' data of desired crypto currency, and saves <br>
+This is a script to scrape data of desired crypto currency, and saves <br>
 the file as a csv to the directory script is being executed from.<br>
 
-Super easy to use, simpley run script and enter currency name. Example below <br> 
+Super easy to use, simply run script and enter currency name and then enter a time interval.<br>
+Example below. <br> 
 
 
 
@@ -21,6 +22,18 @@ Example of how to use: <br>
 #This will prompt you to enter name of currency you want.<br>
 
 >>>Please enter currency name in all lower-cases...spelled correctly: <br>
+
+#Enter name and hit enter
+
+>>>"""Enter number to select time interval:
+                                [1]: 7-Day Data
+                                [2]: 30-Day Data
+                                [3]: 3-Month Data
+                                [4]: 12-Month Data
+                                [5]: All Time Data -->"""
+
+#Then you will be presented with 5 options of time intervals for data. Select the number and hit enter
+
 
 #Enter name and hit enter. Thats it!<br>
 
