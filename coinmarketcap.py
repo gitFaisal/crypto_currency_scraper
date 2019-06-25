@@ -16,10 +16,25 @@ def convert_millions(amount):
 while True:
 
     # Prompt user to enter currency name in lower-case spelled correctly
-
+    # Prompt user to enter time_interval for data
     currency = raw_input("Please enter currency name in all lower-cases...spelled correctly: ")
-
-    url = 'https://coinmarketcap.com/currencies/{}/historical-data/?start=20130428&end=20190615'.format(currency)
+    time_interval = raw_input("""Enter number to select time interval:
+                                [1]: 7-Day Data
+                                [2]: 30-Day Data
+                                [3]: 3-Month Data
+                                [4]: 12-Month Data
+                                [5]: All Time Data -->""")
+    if time_interval == '1':
+        url = 'https://coinmarketcap.com/currencies/{}/historical-data/?start=20190619&end=20190625'.format(currency)
+    elif time_interval == '2':
+        url = 'https://coinmarketcap.com/currencies/{}/historical-data/?start=20190526&end=20190625'.format(currency)
+    elif time_interval == '3':
+        url = 'https://coinmarketcap.com/currencies/{}/historical-data/?start=20190325&end=20190625'.format(currency)
+    elif time_interval == '4':
+        url = 'https://coinmarketcap.com/currencies/{}/historical-data/?start=20180625&end=20190625'.format(currency)
+    elif time_interval == '5':
+        url = 'https://coinmarketcap.com/currencies/{}/historical-data/?start=20130428&end=20190615'.format(currency)
+        
     response = get(url)
     soup = BeautifulSoup(response.text, 'lxml')
 
@@ -61,7 +76,16 @@ while True:
     # No file saved if response code is not 200.
 
     if response.status_code == 200:
-        filename = 'AllTimeData_'+ currency.upper() + '.csv'
+        if time_interval == '1':
+            filename = '7_DayData_'+ currency.upper() + '.csv'
+        elif time_interval =='2':
+            filename = '30_DayData_'+ currency.upper() + '.csv'
+        elif time_interval =='3':
+            filename = '3_MonthData_'+ currency.upper() + '.csv'
+        elif time_interval == '4':
+            filename = '12_MonthData_'+ currency.upper() + '.csv'
+        elif time_interval == '5':
+            filename = 'AllTimeData_'+ currency.upper() + '.csv'
         currency_df.to_csv(filename, index=False)
         print ("Your file has been saved as %s")%(filename)
         break
