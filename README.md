@@ -28,11 +28,11 @@ Example of how to use: <br>
 - Enter name and hit enter
 
 >>>"""Enter number to select time interval:<br>
-                                [1]: 7-Day Data<br>
-                                [2]: 30-Day Data<br>
-                                [3]: 3-Month Data<br>
-                                [4]: 12-Month Data<br>
-                                [5]: All Time Data -->"""<br>
+                                              [1]: 7-Day Data<br>
+                                              [2]: 30-Day Data<br>
+                                              [3]: 3-Month Data<br>
+                                              [4]: 12-Month Data<br>
+                                              [5]: All Time Data -->"""<br>
 
 - Then you will be presented with 5 options of time intervals for data. Select the number and hit enter
 
