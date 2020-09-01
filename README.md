@@ -39,6 +39,6 @@ Example of how to use: <br>
 
 - Enter name and hit enter. Thats it!<br>
 
-File will be saved with time_interval of data + currency name
+File will be saved as csv with time_interval of data + currency name in title.
 
 
