@@ -1,14 +1,9 @@
 
 # Web scraper for all-time historical data from coinmarketcap.com of choosen currency.
 # Saves file as  csv, file name will be printed at end.
-
 from requests import get
 from bs4 import BeautifulSoup
 import pandas as pd
-import sys
-
-reload(sys)
-sys.setdefaultencoding('utf8')
 
 def convert_millions(amount):
     converted = amount / 1000000
@@ -18,8 +13,8 @@ while True:
 
     # Prompt user to enter currency name in lower-case spelled correctly
     # Prompt user to enter time_interval for data
-    currency = raw_input("Please enter currency name in all lower-cases...spelled correctly: ")
-    time_interval = raw_input("""Enter number to select time interval:
+    currency = input("Please enter currency name in all lower-cases...spelled correctly: ")
+    time_interval = input("""Enter number to select time interval:
                                 [1]: 7-Day Data
                                 [2]: 30-Day Data
                                 [3]: 3-Month Data
@@ -35,13 +30,12 @@ while True:
         url = 'https://coinmarketcap.com/currencies/{}/historical-data/?start=20180625&end=20190625'.format(currency)
     elif time_interval == '5':
         url = 'https://coinmarketcap.com/currencies/{}/historical-data/?start=20130428&end=20190615'.format(currency)
-        
+
     response = get(url)
     soup = BeautifulSoup(response.text, 'lxml')
-
     # Using soup.find_all to store all rows into variable rows.
     # Which we will loop through and apppend items we want to our lists.
-    rows = soup.find_all('tr', class_='text-right')
+    rows = soup.find_all('tr', class_='cmc-table-row')
 
     # Empty lists to store values that will be scraped.
     datelist = []
@@ -64,6 +58,7 @@ while True:
         'High':highlist,
         'MarketCap(Millions)':marketCaplist
     })
+    print(currency_df)
     # Converting MarketCap to int64, and then dividing it to get value in millions.
     # Will be easier to read in our excel/csv file.
     currency_df['MarketCap(Millions)'] = currency_df['MarketCap(Millions)'].astype('int64')
@@ -88,7 +83,7 @@ while True:
         elif time_interval == '5':
             filename = 'AllTimeData_'+ currency.upper() + '.csv'
         currency_df.to_csv(filename, index=False)
-        print ("Your file has been saved as %s")%(filename)
+        print ("Your file has been saved as {}").format(filename)
         break
     else:
         print("Please try again with a valid currency name.")
