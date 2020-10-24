@@ -23,7 +23,7 @@ Example of how to use: <br>
 
 - This will prompt you to enter name of currency you want.<br>
 
->>>Please enter currency name in all lower-cases...spelled correctly: <br>
+>>>Please enter currency name spelled correctly: <br>
 
 - Enter name and hit enter
 
