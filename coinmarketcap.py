@@ -13,7 +13,7 @@ while True:
 
     # Prompt user to enter currency name in lower-case spelled correctly
     # Prompt user to enter time_interval for data
-    currency = input("Please enter currency name in all lower-cases...spelled correctly: ")
+    currency = input("Please enter currency name in all lower-cases...spelled correctly: ").lower()
     time_interval = input("""Enter number to select time interval:
                                 [1]: 7-Day Data
                                 [2]: 30-Day Data
@@ -30,6 +30,9 @@ while True:
         url = 'https://coinmarketcap.com/currencies/{}/historical-data/?start=20180625&end=20190625'.format(currency)
     elif time_interval == '5':
         url = 'https://coinmarketcap.com/currencies/{}/historical-data/?start=20130428&end=20190615'.format(currency)
+    else:
+        print("Option out of range. Please enter a number 1 - 5")
+        break
 
     response = get(url)
     soup = BeautifulSoup(response.text, 'lxml')
@@ -58,7 +61,6 @@ while True:
         'High':highlist,
         'MarketCap(Millions)':marketCaplist
     })
-    print(currency_df)
     # Converting MarketCap to int64, and then dividing it to get value in millions.
     # Will be easier to read in our excel/csv file.
     currency_df['MarketCap(Millions)'] = currency_df['MarketCap(Millions)'].astype('int64')
