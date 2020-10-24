@@ -16,7 +16,7 @@ Example below. <br>
 Example of how to use: <br>
 >>> *run terminal*<br>
 
-- I change my directory to desktop here because the script file is on my desktop
+- Make sure you in the right directory, in my case my script is on desktop. 
 
 >>> cd desktop<br>
 >>> python coinmarketcap.py<br>
@@ -34,10 +34,8 @@ Example of how to use: <br>
                                               [4]: 12-Month Data<br>
                                               [5]: All Time Data -->"""<br>
 
-- Then you will be presented with 5 options of time intervals for data. Select the number and hit enter
+- Then you will be presented with 5 options of time intervals for data. Type the number to select option and hit enter.
 
-
-- Enter name and hit enter. Thats it!<br>
 
 File will be saved as csv with time_interval of data + currency name in title.
 
