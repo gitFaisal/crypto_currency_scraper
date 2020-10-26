@@ -11,8 +11,8 @@ def convert_millions(amount):
 
 while True:
 
-    # Prompt user to enter currency name in lower-case spelled correctly
-    # Prompt user to enter time_interval for data
+    # Prompt user to enter currency name correctly.
+    # Prompt user to enter time_interval for data.
     currency = input("Please enter currency name in all lower-cases...spelled correctly: ").lower()
     time_interval = input("""Enter number to select time interval:
                                 [1]: 7-Day Data
@@ -54,7 +54,7 @@ while True:
             lowlist.append(row.find_all('td')[3].text)
             marketCaplist.append(row.find_all('td')[6].text.replace(',',''))
 
-    # Create Pandas DataFrame
+    # Create Pandas DataFrame.
     currency_df = pd.DataFrame({
         'Date':datelist,
         'Low':lowlist,
