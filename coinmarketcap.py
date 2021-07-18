@@ -85,7 +85,7 @@ while True:
         elif time_interval == '5':
             filename = 'AllTimeData_'+ currency.upper() + '.csv'
         currency_df.to_csv(filename, index=False)
-        print ("Your file has been saved as {}").format(filename)
+        print (f"Your file has been saved as {filename}")
         break
     else:
         print("Please try again with a valid currency name.")
