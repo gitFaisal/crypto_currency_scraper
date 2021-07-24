@@ -1,15 +1,16 @@
  <h1 align="center">crypto_currency_scraper</h1>
                             
-                            
+<p align="center">                           
 Scrape Historical Data of any currency from coinmarketcap.com with this python script<br>
 
-This is a script to scrape data of desired crypto currency, and saves <br>
-the file as a csv to the directory script is being executed from.<br>
+This is a script to scrape data of desired crypto currency, and saves 
+the file as a csv to the directory script is being executed from. 
+</p>
+<p align="center">
+ Super easy to use, simply run script and enter currency name and then enter a time interval.<br>
+Example below.
 
-Super easy to use, simply run script and enter currency name and then enter a time interval.<br>
-Example below. <br> 
-
-
+</p>
 
 
 
