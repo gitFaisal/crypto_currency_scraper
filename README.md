@@ -1,4 +1,4 @@
-                             crypto_currency_scraper
+ <h1 align="center">crypto_currency_scraper</h1>
                             
                             
 Scrape Historical Data of any currency from coinmarketcap.com with this python script<br>
